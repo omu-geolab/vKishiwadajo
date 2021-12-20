@@ -80,15 +80,17 @@
 		viewer.setFOV(60);
 		viewer.setPointBudget(1*10000*10000);
 		viewer.loadSettingsFromURL();
-	//	viewer.setBackground("gradient"); // ["skybox", "gradient", "black", "white"];
+		viewer.setBackground("skybox"); // ["skybox", "gradient", "black", "white"];
 		viewer.setBackground(null);
 		//viewer.setMoveSpeed(25);
 
-		viewer.setDescription(`バーチャル岸和田城<p>
-					回転： 左クリック+マウス操作、  移動： 右クリック＋マウス操作<br>
-					拡大/縮小： マウスホイール`);
+//		viewer.setDescription(`バーチャル岸和田城（開発中）<p>
+	//				回転： 左クリック+マウス操作、  移動： 右クリック＋マウス操作<br>
+		//			拡大/縮小： マウスホイール`);
 
 		viewer.loadSettingsFromURL();
+
+	//	viewer.setDescription("Point cloud courtesy of <a target='_blank' href='https://www.sigeom.ch/'>sigeom sa</a>");
 
 		viewer.loadGUI(() => {
 			viewer.setLanguage('jp');
@@ -96,8 +98,46 @@
 			$("#menu_scene").next().show();
 			$("#menu_classification").hide();
 			$("#menu_filters").hide();
-		//	viewer.toggleSidebar();
+			viewer.toggleSidebar();
 		});
+
+/*
+			let honmaru = "./pointclouds/honmaru/metadata.json";
+			Potree.loadPointCloud(honmaru).then(e => {
+				let pointcloud = e.pointcloud;
+				let material = pointcloud.material;
+				viewer.scene.addPointCloud(pointcloud);
+			//	e.pointcloud.position.z = 0;
+
+				material.activeAttributeName = "rgba";
+				material.size = 1;
+				//material.minSize = 2;
+
+				material.shape = Potree.PointShape.CIRCLE;
+				viewer.useHQ = true;
+				material.pointSizeType = Potree.PointSizeType.ATTENUATED;
+
+				viewer.scene.view.position.set(-57797.512, -170779.738, 44.642);
+	      viewer.scene.view.lookAt(-57815.587, -170784.700, 25.739);
+
+				Potree.measureTimings = true;
+
+
+				let pointcloudProjection = proj4.defs("EPSG:2448");
+				let mapProjection = proj4.defs("WGS84");
+
+				window.toMap = proj4(pointcloudProjection, mapProjection);
+				window.toScene = proj4(mapProjection, pointcloudProjection);
+
+				{
+					let bb = viewer.getBoundingBox();
+
+					let minWGS84 = proj4(pointcloudProjection, mapProjection, bb.min.toArray());
+					let maxWGS84 = proj4(pointcloudProjection, mapProjection, bb.max.toArray());
+				}
+
+			});
+			*/
 
 			Potree.loadPointCloud("./pointclouds/honmaru/metadata.json", "本丸", e => {
 				let scene = viewer.scene;
@@ -214,6 +254,64 @@
 
 requestAnimationFrame(loop);
 
+
 	</script>
+
+	<script>
+
+		const animation = new Potree.CameraAnimation(viewer);
+
+		const positions = [
+		　[-57895.776, -170707.754, 23.341],
+			[-57882.895, -170719.601, 17.752],
+			[-57869.887, -170731.371, 12.200], //3
+			[-57859.127, -170739.930, 11.737], //4
+			[-57854.313, -170737.399, 11.977],
+			[-57849.673, -170735.437, 12.433], //6
+			[-57835.992, -170739.001, 14.091],
+			[-57832.683, -170742.392, 14.042], //8
+			[-57828.406, -170748.955, 13.997],
+			[-57824.499, -170757.039, 14.249],
+			[-57823.996, -170758.269, 14.180],
+			[-57820.979, -170766.786, 14.396],
+			[-57816.353, -170769.565, 15.936],
+			[-57809.521, -170773.728, 17.959],
+			[-57806.673, -170775.833, 18.021],
+			[-57809.126, -170783.765, 19.935],
+
+		];
+
+		const targets = [
+			[-57852.361, -170743.019, 5.052],
+			[-57852.361, -170743.019, 5.052],
+			[-57852.361, -170743.019, 5.052], //3
+			[-57852.361, -170743.019, 5.052],
+			[-57852.361, -170743.019, 5.052], //5
+			[-57852.361, -170743.019, 5.052],
+			[-57830.479, -170748.050, 15.084],
+			[-57826.169, -170758.445, 14.310],
+			[-57826.169, -170758.445, 14.310],
+			[-57826.169, -170758.445, 14.310],
+			[-57820.691, -170765.284, 14.119],
+			[-57818.322, -170768.602, 14.358],
+			[-57810.307, -170772.773, 16.831],
+			[-57804.536, -170776.972, 17.933],
+			[-57805.774, -170779.492, 18.101],
+			[-57811.175, -170787.439, 19.547],			
+
+		];
+
+		for(let i = 0; i < positions.length; i++){
+			const cp = animation.createControlPoint();
+
+			cp.position.set(...positions[i]);
+			cp.target.set(...targets[i]);
+		}
+
+		viewer.scene.addCameraAnimation(animation);
+
+	</script>
+
+
   </body>
 </html>

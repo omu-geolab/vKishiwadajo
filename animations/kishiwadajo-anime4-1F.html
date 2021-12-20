@@ -84,20 +84,60 @@
 		viewer.setBackground(null);
 		//viewer.setMoveSpeed(25);
 
-		viewer.setDescription(`バーチャル岸和田城<p>
-					回転： 左クリック+マウス操作、  移動： 右クリック＋マウス操作<br>
-					拡大/縮小： マウスホイール`);
+//		viewer.setDescription(`バーチャル岸和田城（開発中）<p>
+//					回転： 左クリック+マウス操作、  移動： 右クリック＋マウス操作<br>
+//					拡大/縮小： マウスホイール`);
 
 		viewer.loadSettingsFromURL();
 
+	//	viewer.setDescription("Point cloud courtesy of <a target='_blank' href='https://www.sigeom.ch/'>sigeom sa</a>");
+
 		viewer.loadGUI(() => {
 			viewer.setLanguage('jp');
-			//$("#menu_tools").next().show();
+		//	$("#menu_tools").next().show();
 			$("#menu_scene").next().show();
 			$("#menu_classification").hide();
 			$("#menu_filters").hide();
-		//	viewer.toggleSidebar();
+			viewer.toggleSidebar();
 		});
+
+/*
+			let honmaru = "./pointclouds/honmaru/metadata.json";
+			Potree.loadPointCloud(honmaru).then(e => {
+				let pointcloud = e.pointcloud;
+				let material = pointcloud.material;
+				viewer.scene.addPointCloud(pointcloud);
+			//	e.pointcloud.position.z = 0;
+
+				material.activeAttributeName = "rgba";
+				material.size = 1;
+				//material.minSize = 2;
+
+				material.shape = Potree.PointShape.CIRCLE;
+				viewer.useHQ = true;
+				material.pointSizeType = Potree.PointSizeType.ATTENUATED;
+
+				viewer.scene.view.position.set(-57797.512, -170779.738, 44.642);
+	      viewer.scene.view.lookAt(-57815.587, -170784.700, 25.739);
+
+				Potree.measureTimings = true;
+
+
+				let pointcloudProjection = proj4.defs("EPSG:2448");
+				let mapProjection = proj4.defs("WGS84");
+
+				window.toMap = proj4(pointcloudProjection, mapProjection);
+				window.toScene = proj4(mapProjection, pointcloudProjection);
+
+				{
+					let bb = viewer.getBoundingBox();
+
+					let minWGS84 = proj4(pointcloudProjection, mapProjection, bb.min.toArray());
+					let maxWGS84 = proj4(pointcloudProjection, mapProjection, bb.max.toArray());
+				}
+
+			});
+			*/
 
 			Potree.loadPointCloud("./pointclouds/honmaru/metadata.json", "本丸", e => {
 				let scene = viewer.scene;
@@ -214,6 +254,53 @@
 
 requestAnimationFrame(loop);
 
+
 	</script>
+
+	<script>
+
+		const animation = new Potree.CameraAnimation(viewer);
+
+		const positions = [
+			[-57809.126, -170783.765, 19.935],
+			[-57811.539, -170787.616, 19.819],
+			[-57811.289, -170791.070, 19.910],
+			[-57809.461, -170793.581, 20.073],
+			[-57808.975, -170798.282, 20.477],
+			[-57812.951, -170801.431, 20.317],
+			[-57818.407, -170798.504, 20.025],
+			[-57817.473, -170792.157, 20.270],
+			[-57812.760, -170790.768, 21.010],
+			[-57807.862, -170792.013, 21.570],
+
+		];
+
+		const targets = [
+			[-57814.726, -170796.688, 18.998],
+			[-57814.726, -170796.688, 18.998],
+			[-57814.726, -170796.688, 18.998],
+			[-57814.726, -170796.688, 18.998],
+			[-57814.726, -170796.688, 18.998],
+			[-57814.726, -170796.688, 18.998],
+			[-57814.726, -170796.688, 18.998],
+			[-57814.726, -170796.688, 18.998],
+			[-57814.726, -170796.688, 18.998],
+			[-57814.726, -170796.688, 18.998],
+
+		];
+
+
+		for(let i = 0; i < positions.length; i++){
+			const cp = animation.createControlPoint();
+
+			cp.position.set(...positions[i]);
+			cp.target.set(...targets[i]);
+		}
+
+		viewer.scene.addCameraAnimation(animation);
+
+	</script>
+
+
   </body>
 </html>
