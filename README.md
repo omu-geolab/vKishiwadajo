@@ -15,6 +15,6 @@
 - Web点群ビューアライブラリは、[Potree](https://github.com/potree/potree)を使用しています。
 - コードをCloneし、Webサーバ上で実行することで、下のようなアニメーションを作成することが可能です。
 
-### 岸和田城の点群データ（LAS）の公開サイト
+### 岸和田城点群データ（LAS）の公開サイト
 - [G空間情報センター](https://www.geospatial.jp/ckan/dataset/kishiwada-castle)
 - 産業技術総合研究所
