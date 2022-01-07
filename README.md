@@ -9,7 +9,7 @@
 
 [![](https://img.youtube.com/vi/9WtmdcQqNI0/0.jpg)](https://www.youtube.com/watch?v=9WtmdcQqNI0)
 
-3次元点群データをもとに作成したアニメーション動画
+*3次元点群データをもとに作成したアニメーション動画*
 
 ### コードの活用方法
 - Web点群ビューアライブラリは、[Potree](https://github.com/potree/potree)を使用しています。
