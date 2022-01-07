@@ -6,6 +6,7 @@
 * 詳細は[こちら](https://www.connect.osaka-cu.ac.jp/4c/wp-content/uploads/2021/08/pp.62-73_bunkarekishikanko.pdf)にまとめられています。
 
 [![](https://img.youtube.com/vi/9WtmdcQqNI0/0.jpg)](https://www.youtube.com/watch?v=9WtmdcQqNI0)
+
 3次元点群データをもとに作成したアニメーション動画
 
 ### コードの活用方法
