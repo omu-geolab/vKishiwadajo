@@ -7,7 +7,7 @@
   - [大阪市立大学プレスリリース](https://www.osaka-cu.ac.jp/ja/news/2020/200625)
   - [大阪市立大学地域連携センター年報2020](https://www.connect.osaka-cu.ac.jp/4c/wp-content/uploads/2021/08/pp.62-73_bunkarekishikanko.pdf)
 
-[![](https://img.youtube.com/vi/9WtmdcQqNI0/0.jpg)](https://www.youtube.com/watch?v=9WtmdcQqNI0)
+[![](https://img.youtube.com/vi/9WtmdcQqNI0/0.jpg)](https://youtu.be/0PX5MTKd-Ag)
 
 *3次元点群データをもとに作成したアニメーション動画*
 
