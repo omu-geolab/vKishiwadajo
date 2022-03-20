@@ -89,9 +89,6 @@
 //					拡大/縮小： マウスホイール`);
 
 		viewer.loadSettingsFromURL();
-
-	//	viewer.setDescription("Point cloud courtesy of <a target='_blank' href='https://www.sigeom.ch/'>sigeom sa</a>");
-
 		viewer.loadGUI(() => {
 			viewer.setLanguage('jp');
 		//	$("#menu_tools").next().show();
@@ -101,45 +98,8 @@
 			viewer.toggleSidebar();
 		});
 
-/*
-			let honmaru = "./pointclouds/honmaru/metadata.json";
-			Potree.loadPointCloud(honmaru).then(e => {
-				let pointcloud = e.pointcloud;
-				let material = pointcloud.material;
-				viewer.scene.addPointCloud(pointcloud);
-			//	e.pointcloud.position.z = 0;
 
-				material.activeAttributeName = "rgba";
-				material.size = 1;
-				//material.minSize = 2;
-
-				material.shape = Potree.PointShape.CIRCLE;
-				viewer.useHQ = true;
-				material.pointSizeType = Potree.PointSizeType.ATTENUATED;
-
-				viewer.scene.view.position.set(-57797.512, -170779.738, 44.642);
-	      viewer.scene.view.lookAt(-57815.587, -170784.700, 25.739);
-
-				Potree.measureTimings = true;
-
-
-				let pointcloudProjection = proj4.defs("EPSG:2448");
-				let mapProjection = proj4.defs("WGS84");
-
-				window.toMap = proj4(pointcloudProjection, mapProjection);
-				window.toScene = proj4(mapProjection, pointcloudProjection);
-
-				{
-					let bb = viewer.getBoundingBox();
-
-					let minWGS84 = proj4(pointcloudProjection, mapProjection, bb.min.toArray());
-					let maxWGS84 = proj4(pointcloudProjection, mapProjection, bb.max.toArray());
-				}
-
-			});
-			*/
-
-			Potree.loadPointCloud("./pointclouds/honmaru/metadata.json", "本丸", e => {
+			Potree.loadPointCloud("https://www.cerd.osaka-cu.ac.jp/vKishiwadajo-latest/pointclouds/honmaru/metadata.json", "本丸", e => {
 				let scene = viewer.scene;
 				let pointcloud = e.pointcloud;
 
@@ -175,7 +135,7 @@
 
 
 
-			Potree.loadPointCloud("./pointclouds/others/metadata.json", "other", e => {
+			Potree.loadPointCloud("https://www.cerd.osaka-cu.ac.jp/vKishiwadajo-latest/pointclouds/others/metadata.json", "other", e => {
 				let scene = viewer.scene;
 				let pointcloud = e.pointcloud;
 
@@ -262,28 +222,32 @@ requestAnimationFrame(loop);
 		const animation = new Potree.CameraAnimation(viewer);
 
 		const positions = [
+			[-57810.394, -170796.597, 31.301],
+			[-57814.673, -170793.743, 31.184],
+			[-57816.763, -170792.628, 30.943],
+			[-57819.402, -170791.140, 30.628],
+			[-57814.908, -170788.316, 42.597],
+			[-57791.156, -170786.286, 54.245],
+
+			[-57794.641, -170797.940, 53.940],
+			[-57805.921, -170808.118, 53.914],
+			[-57819.231, -170813.095, 54.739],
+			[-57833.911, -170814.029, 55.454],
 			[-57843.566, -170812.245, 55.253],
-			[-57862.101, -170796.675, 56.049],
-			[-57869.349, -170777.670, 54.848],
-			[-57857.106, -170749.987, 55.851],
-			[-57839.930, -170737.845, 53.396],
-			[-57823.733, -170737.978, 53.816],
-			[-57806.723, -170749.441, 56.439],
-			[-57793.127, -170766.672, 53.816],
-			[-57790.331, -170781.427, 51.890],
-			[-57751.614, -170786.054, 87.070],
 		];
 
 		const targets = [
-			[-57831.141, -170776.550, 14.808],
-			[-57831.141, -170776.550, 14.808],
-			[-57831.141, -170776.550, 14.808],
-			[-57831.141, -170776.550, 14.808],
-			[-57831.141, -170776.550, 14.808],
-			[-57831.141, -170776.550, 14.808],
-			[-57831.141, -170776.550, 14.808],
-			[-57831.141, -170776.550, 14.808],
-			[-57831.141, -170776.550, 14.808],
+			[-57814.585, -170796.173, 30.862],
+			[-57816.123, -170793.140, 31.004],
+			[-57818.061, -170792.088, 30.782],
+  			[-57881.101, -170765.472, 22.975],
+			[-57844.264, -170773.656, 16.698],
+			[-57831.128, -170776.504, 14.835],
+
+			[-57831.128, -170776.504, 14.835],
+			[-57831.128, -170776.504, 14.835],
+			[-57831.128, -170776.504, 14.835],
+			[-57831.128, -170776.504, 14.835],
 			[-57831.141, -170776.550, 14.808],
 		];
 
