@@ -17,8 +17,8 @@
 - 岸和田城の魅力的な動画制作やその他の活用事例について、ぜひ情報をお知らせください！
 
 ### 使用データ
-- バックグラウンドミュージック:  [ノスタルジア](http://nostalgiamusic.info/image_uplifting.html)(桜舞う頃)
-- 背景画像:　 [OpenStreetMap](osm.org)
+- バックグラウンドミュージック:　[ノスタルジア](http://nostalgiamusic.info/image_uplifting.html)(桜舞う頃)
+- 背景画像:　 [OpenStreetMap](https://www.openstreetmap.org/)
 
 ### 岸和田城点群データ（LAS）の公開サイト
 - [G空間情報センター 岸和田城 3次元点群データ](https://www.geospatial.jp/ckan/dataset/kishiwada-castle)
