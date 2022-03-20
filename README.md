@@ -11,12 +11,16 @@
 
 *3次元点群データをもとに作成したアニメーション動画*
 
+### 使用データ
+- バックグラウンドミュージック: 
+- 背景画像: OpenStreetMap
+
 ### コードの活用方法
 - Web点群ビューアライブラリは、[Potree](https://github.com/potree/potree)を使用しています。
 - コードをCloneし、Webサーバ上で実行することで、上の動画のようなアニメーションを作成することが可能です。
 
 ### 岸和田城点群データ（LAS）の公開サイト
-- [G空間情報センター 岸和田城データ公開サイト](https://www.geospatial.jp/ckan/dataset/kishiwada-castle)
+- [G空間情報センター 岸和田城 3次元点群データ](https://www.geospatial.jp/ckan/dataset/kishiwada-castle)
 - [産業技術総合研究所 3DDB Viewer](https://gsrt.digiarc.aist.go.jp/3ddb_demo/tdv/index.html)
-  - [1ページ目]　(https://00m.in/001Vl)
+  - [1ページ目](https://00m.in/001Vl)
   - [2ページ目](https://00m.in/SxCkG) 
