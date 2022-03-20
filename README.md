@@ -7,17 +7,18 @@
   - [大阪市立大学プレスリリース](https://www.osaka-cu.ac.jp/ja/news/2020/200625)
   - [大阪市立大学地域連携センター年報2020](https://www.connect.osaka-cu.ac.jp/4c/wp-content/uploads/2021/08/pp.62-73_bunkarekishikanko.pdf)
 
-[![](https://img.youtube.com/vi/9WtmdcQqNI0/0.jpg)](https://youtu.be/0PX5MTKd-Ag)
+[![](https://img.youtube.com/vi/0PX5MTKd-Ag/0.jpg)](https://youtu.be/0PX5MTKd-Ag)
 
 *3次元点群データをもとに作成したアニメーション動画*
-
-### 使用データ
-- バックグラウンドミュージック: 
-- 背景画像: OpenStreetMap
 
 ### コードの活用方法
 - Web点群ビューアライブラリは、[Potree](https://github.com/potree/potree)を使用しています。
 - コードをCloneし、Webサーバ上で実行することで、上の動画のようなアニメーションを作成することが可能です。
+- 岸和田城の魅力的な動画を作成し、ぜひ情報をお知らせください！
+
+### 使用データ
+- バックグラウンドミュージック: 
+- 背景画像: OpenStreetMap
 
 ### 岸和田城点群データ（LAS）の公開サイト
 - [G空間情報センター 岸和田城 3次元点群データ](https://www.geospatial.jp/ckan/dataset/kishiwada-castle)
