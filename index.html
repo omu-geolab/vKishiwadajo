@@ -108,7 +108,24 @@
 				material.pointSizeType = Potree.PointSizeType.ATTENUATED;
 				material.shape = Potree.PointShape.CIRCLE;
 				material.activeAttributeName = "rgba";
-				viewer.useHQ = true;
+
+                                //モバイルの場合は、Standard Qualityで表示
+                                if (navigator.platform == 'iPhone' ||
+                                    navigator.platform == "iPad" ||        // -iOS12
+                                   (navigator.platform == "MacIntel" &&   // iPadOS
+                                    navigator.userAgent.indexOf("Safari") != -1 &&
+                                    navigator.userAgent.indexOf("Chrome") == -1 &&
+                                    navigator.standalone !== undefined) ||
+                                    navigator.userAgent.indexOf('Android') > -1 && navigator.userAgent.indexOf('Mobile') > -1 ||
+                                    navigator.userAgent.indexOf('Android') > -1)
+                                {
+                                        viewer.useHQ = false;
+                                        material.pointSizeType = Potree.PointSizeType.ADAPTIVE;
+
+                                } else { // PCの場合は、High Qualityで表示
+                                        viewer.useHQ = true;
+                                        material.pointSizeType = Potree.PointSizeType.ATTENUATED;
+                                }
 
 				scene.addPointCloud(pointcloud);
 
@@ -144,7 +161,25 @@
 				material.pointSizeType = Potree.PointSizeType.ATTENUATED;
 				material.shape = Potree.PointShape.CIRCLE;
 				material.activeAttributeName = "rgba";
-				viewer.useHQ = true;
+
+
+			        //モバイルの場合は、Standard Qualityで表示
+                                if (navigator.platform == 'iPhone' ||
+                                    navigator.platform == "iPad" ||        // -iOS12
+                                   (navigator.platform == "MacIntel" &&   // iPadOS
+                                    navigator.userAgent.indexOf("Safari") != -1 &&
+                                    navigator.userAgent.indexOf("Chrome") == -1 &&
+                                    navigator.standalone !== undefined) ||
+                                    navigator.userAgent.indexOf('Android') > -1 && navigator.userAgent.indexOf('Mobile') > -1 ||
+                                    navigator.userAgent.indexOf('Android') > -1)
+                                {
+                                        viewer.useHQ = false;
+                                        material.pointSizeType = Potree.PointSizeType.ADAPTIVE;
+
+                                } else { // PCの場合は、High Qualityで表示
+                                        viewer.useHQ = true;
+                                        material.pointSizeType = Potree.PointSizeType.ATTENUATED;
+                                }
 
 				scene.addPointCloud(pointcloud);
 
