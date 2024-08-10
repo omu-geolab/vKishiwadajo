@@ -21,7 +21,7 @@
 - バックグラウンドミュージック:　[ノスタルジア](http://nostalgiamusic.info/image_uplifting.html)(桜舞う頃),　[BGMer](https://bgmer.net/song-list?genre=&keyword=%E3%82%BD%E3%83%A1%E3%82%A4%E3%83%A8%E3%82%B7%E3%83%8E&type=music)(ソメイヨシノ)
 - 背景画像:　 [OpenStreetMap](https://www.openstreetmap.org/)
 
-### 岸和田城点群データ（LAS）の公開サイト
+### 岸和田城点群データの公開サイト
 - [G空間情報センター 岸和田城 3次元点群データ](https://www.geospatial.jp/ckan/dataset/kishiwada-castle)
 - [産業技術総合研究所 3DDB Viewer](https://gsrt.digiarc.aist.go.jp/3ddb_demo/tdv/index.html)
 
