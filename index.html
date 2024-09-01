@@ -99,7 +99,7 @@
 		//	viewer.toggleSidebar();
 		});
 
-			Potree.loadPointCloud("https://geospatial-lab.jp/vKishiwadajo/latest/pointclouds/honmaru/metadata.json", "本丸", e => {
+			Potree.loadPointCloud("https://geospatial-lab.jp:8443/vKishiwadajo/latest/pointclouds/honmaru/metadata.json", "本丸", e => {
 				let scene = viewer.scene;
 				let pointcloud = e.pointcloud;
 
@@ -152,7 +152,7 @@
 
 
 
-			Potree.loadPointCloud("https://geospatial-lab.jp/vKishiwadajo/latest/pointclouds/others/metadata.json", "外堀", e => {
+			Potree.loadPointCloud("https://geospatial-lab.jp:8443/vKishiwadajo/latest/pointclouds/others/metadata.json", "外堀", e => {
 				let scene = viewer.scene;
 				let pointcloud = e.pointcloud;
 
@@ -185,7 +185,7 @@
 
 			});
 
-			Potree.loadPointCloud("https://geospatial-lab.jp/vKishiwadajo/latest/pointclouds/jokamachi/metadata.json", "城下町", e => {
+			Potree.loadPointCloud("https://geospatial-lab.jp:8443/vKishiwadajo/latest/pointclouds/jokamachi/metadata.json", "城下町", e => {
 				let scene = viewer.scene;
 				let pointcloud = e.pointcloud;
 
