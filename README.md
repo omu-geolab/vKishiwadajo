@@ -25,3 +25,6 @@
 - [G空間情報センター 岸和田城 3次元点群データ](https://www.geospatial.jp/ckan/dataset/kishiwada-castle)
 - [産業技術総合研究所 3DDB Viewer](https://gsrt.digiarc.aist.go.jp/3ddb_demo/tdv/index.html)
 
+### チーム / Team
+大阪公立大学大学院 情報学研究科 学際情報学専攻 [吉田大介研究室](https://www.omu.ac.jp/i/geo/)（小村風我）  
+Daisuke Yoshida Laboratory, Department of Interdisciplinary Informatics, Graduate School of Informatics, Osaka Metropolitan University
